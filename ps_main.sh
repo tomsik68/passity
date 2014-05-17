@@ -3,15 +3,13 @@
 PASSITY_DIR=`dirname $(readlink -f $0)`
 LOCKED_FILE=~/.passwd_locked.tar.gz
 PASSDIR=~/.password-store
-LIST_ACTIONS=""
+ACTION=""
 if [ -e $LOCKED_FILE ]; then
-  LIST_ACTIONS="Unlock Password Database"
+  ACTION=`zenity --list --hide-header --column This --text "Welcome to passity! Please choose an action" "Unlock Password Database"`
 fi
 if [ -e $PASSDIR ]; then
-  LIST_ACTIONS="Lock Password Database"
+  ACTION=`zenity --list --hide-header --column This --text "Welcome to passity! Please choose an action" "Lock Password Database" "List your passwords"`
 fi
-echo $LIST_OPTIONS
-ACTION=`zenity --list --hide-header --column This --text "Welcome to passity! Please choose an action" "$LIST_ACTIONS"`
 cd $PASSITY_DIR
 case $ACTION in
 	"Lock Password Database" )
