@@ -18,4 +18,6 @@ case $ACTION in
 		sh lockpass.sh;;
 	"Unlock Password Database" )
 		sh unlockpass.sh;;
+	"List your passwords" )
+		sh listpass.sh;;
 esac
