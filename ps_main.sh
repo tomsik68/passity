@@ -11,6 +11,4 @@ case $ACTION in
 		sh editpass.sh;;
 	"See your passwords" )
 		sh passlist.sh;;
-	* )
-		zenity --warning --text "Unknown answer";;
 esac
